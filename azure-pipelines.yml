@@ -1,87 +1,91 @@
-# Python to Linux Web App on Azure
-# Build your Python project and deploy it to Azure as a Linux Web App.
-# Change python version to one thats appropriate for your application.
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
-
-trigger:
-- main
-
+name: Azure Pipelines
 variables:
-  # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '2f1514c5-9804-4609-8b8e-06459665f7ee'
-
-  # Web app name
-  webAppName: 'building-ci-cd-pipelines-asa'
-
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
-  # Environment name
-  environmentName: 'building-ci-cd-pipelines-asa'
-
-  # Project root folder. Point to the folder containing manage.py file.
-  projectRoot: $(System.DefaultWorkingDirectory)
-
-  # Python version: 3.7
-  pythonVersion: '3.7'
-
+  python.version: '3.7.6'
 stages:
 - stage: Build
-  displayName: Build stage
   jobs:
-  - job: BuildJob
+  - job: Build
     pool:
-      vmImage: $(vmImageName)
+      name: Hosted Ubuntu 1604
     steps:
-    - task: UsePythonVersion@0
+    - task: DownloadSecureFile@1
+      name: tfvardef
+      displayName: Download terraform.tfvars
       inputs:
-        versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
-
-    - script: |
-        python -m venv antenv
-        source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
-      workingDirectory: $(projectRoot)
-      displayName: "Install requirements"
-
+        secureFile: 'terraform.tfvars'
+    # Needed for Terraform VM deployment
+    - task: InstallSSHKey@0
+      inputs:
+        knownHostsEntry: 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+        sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHKbE389jqb4AckEtNV9Kdd2cxZqgbf05lTveYmjgO4DSnCIPNakMTLtNdAPHeW+WHLsHZVbhl5DH+qVYPMST3BG1QAhS4Ey21UkcHdPkhVQqwBXSRFTj29OEULHgnKlQkdimSnCO2A8+ObdCJ/uI0VPZ6F305GvQjzu+ifXnKCMQrwouGeAMVXP5t+77gHf1sjeN1AO+wxYZbhqLqO0TjEnsCKdqYuj822fEbgKdcEUQAd6ZB5FAgYm0wzb3PHQPar8NHompp4kIlSrwEdnXWIyk164Md5IxXZwz8zUpMG3impQ8l4xMUJcHt6zYlvheH+CUmCl2NHTcBrz9Xztew8EZhaqSEUi3Oo+9/LiNXG8iCy0XYET4HL9uBDkJMuUXYapMi6how/dOwhOXgW/lwdbvbx7Lle4ri4yUvtzT5IZaILOPgWHIQTi7T93IquvO1OS+2X0qt3FKHA9svPbtKygp8u/Z0IR7+rKhPCIM1Y/dgY9HLRuEQHFgbZBZN8Xy3S5nsKyey7ITTQtqM2VBREUrZTYPmWqoyI7lXgHf6OcOqiHHdXuqrh7O9WIV20TnS115Rh3cZtJIFaZ4yEu+5zKMseSarrpOTwmayuDyKYvAvI5mXpA7BY/81x5knwFeJOZm7JJiKp2u3cwWc/H9+rMcwICol0ouaisH8SbceBw== amine.caius@gmail.com'
+        sshKeySecureFile: 'id_rsa'
+    - bash: |
+        cp $(tfvardef.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/environnments/test
+      displayName: Copy terraform.tfvars
+    - task: TerraformInstaller@0
+      displayName: install Terraform v0.15.4
+      inputs:
+        terraformVersion: '0.15.4'
+    - task: Bash@3
+      displayName: terraform init
+      inputs:
+        targetType: 'inline'
+        script: terraform init
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environnments/test'
+    - task: Bash@3
+      displayName: terraform apply
+      inputs:
+        targetType: 'inline'
+        script: terraform apply -auto-approve
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environnments/test'
     - task: ArchiveFiles@2
-      displayName: 'Archive files'
+      displayName: 'Archive FakeRestAPI'
       inputs:
-        rootFolderOrFile: '$(projectRoot)'
+        rootFolderOrFile: 'path/to/fakerestapi'
         includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        replaceExistingArchive: true
-
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      displayName: 'Upload package'
-      artifact: drop
-
-- stage: Deploy
-  displayName: 'Deploy Web App'
-  dependsOn: Build
-  condition: succeeded()
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
+      displayName: 'Upload Package'
+      artifact: drop-fakerestapi
+- stage:
   jobs:
-  - deployment: DeploymentJob
+  - deployment: FakeRestAPI
     pool:
-      vmImage: $(vmImageName)
-    environment: $(environmentName)
+      vmImage: 'Ubuntu-16.04'
+    environment: 'TEST'
     strategy:
       runOnce:
         deploy:
           steps:
-
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: '$(pythonVersion)'
-            displayName: 'Use Python version'
-
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : building-ci-cd-pipelines-asa'
+            displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: $(azureServiceConnectionId)
-              appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              azureSubscription: ''
+              appName: ''
+              appType: webApp
+              package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
+  # - deployment: VMDeploy
+  #   displayName: NAME
+  #   environment:
+  #     name:  ENVIRONMENT NAME
+  #     resourceType: VirtualMachine
+  #     tags: TAG NAME
+  #   strategy:
+  #     runOnce:
+  #       deploy:
+  #         steps:
+  #         - task: Bash@3
+  #           inputs:
+  #             targetType: 'inline'
+  #             script: |
+  #               #! /bin/bash
+                
+  #               sudo apt-get upgrade -y
+  #               sudo apt-get install python3-pip -y
+  #               sudo apt-get install unzip -y
+  #               sudo apt-get install -y chromium-browser
+  #               pip3 install selenium
+  #               export PATH=$PATH:some/path
+
+
