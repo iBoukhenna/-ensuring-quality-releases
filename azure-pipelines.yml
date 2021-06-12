@@ -48,7 +48,20 @@ stages:
     - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
       displayName: 'Upload Package'
       artifact: drop-fakerestapi
-- stage:
+    - task: ArchiveFiles@2
+      displayName: 'Archive Automatedtesting'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/automatedtesting-$(Build.BuildId).zip'
+        verbose: true
+    - task: PublishPipelineArtifact@1
+      displayName: 'Publish AutomatedTesting Artifact'
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/automatedtesting-$(Build.BuildId).zip'
+        artifactName: 'automatedtesting-artifact'
+- stage: Deploy
   jobs:
   - deployment: FakeRestAPI
     pool:
