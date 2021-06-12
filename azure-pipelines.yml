@@ -113,3 +113,24 @@ stages:
                 chromium-browser --version
                 chromedriver --version
                 #export PATH=$PATH:some/path
+- stage: Test
+  jobs:
+  - job: Postman
+    pool:
+        name: Hosted Ubuntu 1604
+    steps:
+      - task: CmdLine@2
+        displayName: Install newman
+        inputs:
+          script: 'sudo npm install -g newman'
+          workingDirectory: $(System.DefaultWorkingDirectory)
+      - task: CmdLine@2
+        displayName: Run newman
+        continueOnError: true
+        inputs:
+          script: 'newman run regression-validation-test-suite.postman_collection.json \
+                   -e regression-validation-test-environment.postman_environment.json \
+                   --reporters cli,junit \
+                   --reporter-junit-export log/regression-validation-test.xml \
+                   --suppress-exit-code'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
