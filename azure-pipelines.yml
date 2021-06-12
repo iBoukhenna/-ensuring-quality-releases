@@ -70,7 +70,7 @@ stages:
     environment:
       name: 'TEST'
       resourceType: VirtualMachine
-      tags: Dev
+      tags: TEST
     strategy:
       runOnce:
         deploy:
