@@ -128,9 +128,9 @@ stages:
         displayName: Run newman
         continueOnError: true
         inputs:
-          script: 'newman run regression-validation-test-suite.postman_collection.json \
-                   -e regression-validation-test-environment.postman_environment.json \
+          script: 'newman run postman.json \
+                   -e postman-vars.json \
                    --reporters cli,junit \
-                   --reporter-junit-export log/regression-validation-test.xml \
+                   --reporter-junit-export log/postman-result.xml \
                    --suppress-exit-code'
           workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
