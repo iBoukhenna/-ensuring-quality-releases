@@ -153,3 +153,25 @@ stages:
                 unzip -o automatedtesting-$(Build.BuildId).zip
                 cd selenium
                 python3 login.py
+  - deployment: JMeter
+    environment:
+      name:  'TEST'
+      resourceType: VirtualMachine
+      tags: TEST
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: JMeterInstaller@0
+            inputs:
+              jmeterVersion: '5.2.1'
+          - task: Bash@3
+            displayName: EnduranceTest
+            inputs:
+              targetType: 'inline'
+              script: |
+                #! /bin/bash
+                cd $(Pipeline.Workspace)/automatedtesting-artifact
+                unzip -o automatedtesting-$(Build.BuildId).zip
+                cd jmeter
+                jmeter -n -t Starter.jmx
