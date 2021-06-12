@@ -69,7 +69,7 @@ stages:
     displayName: 'Install Tools'
     environment:
       name: 'TEST'
-      resourceType: VirtualMachine
+      resourceType: vm
       tags: 'TEST'
     strategy:
       runOnce:
