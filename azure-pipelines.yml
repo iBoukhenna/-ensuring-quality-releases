@@ -62,7 +62,7 @@ stages:
             displayName: 'Deploy Azure Web App'
             inputs:
               azureSubscription: 'service-connection-ib'
-              appName: 'TestingAppForQuality-vm-vm'
+              appName: 'ensuring-quality-releases-repo-appservice'
               appType: webApp
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
   # - deployment: VMDeploy
