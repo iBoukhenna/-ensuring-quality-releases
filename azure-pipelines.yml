@@ -31,7 +31,7 @@ stages:
       inputs:
         targetType: 'inline'
         script: terraform init
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environnments/test'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
     - task: Bash@3
       displayName: terraform apply
       inputs:
