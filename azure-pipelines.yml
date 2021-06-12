@@ -128,9 +128,9 @@ stages:
         displayName: Run newman
         continueOnError: true
         inputs:
-          script: 'newman run postman.json \
-                   -e postman-vars.json \
+          script: 'newman run StarterAPIs.json \
+                   -e StarterAPIs.vars.json \
                    --reporters cli,junit \
-                   --reporter-junit-export log/postman-result.xml \
+                   --reporter-junit-export log/StarterAPIsPostmanResult.xml \
                    --suppress-exit-code'
           workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
