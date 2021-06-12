@@ -134,3 +134,22 @@ stages:
                    --reporter-junit-export log/StarterAPIsPostmanResult.xml \
                    --suppress-exit-code'
           workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+  - deployment: Selenium
+    environment:
+      name:  'TEST'
+      resourceType: VirtualMachine
+      tags: TEST
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: Bash@3
+            inputs:
+              displayName: Run selenium
+              targetType: 'inline'
+              script: |
+                #! /bin/bash
+                cd $(Pipeline.Workspace)/automatedtesting-artifact
+                unzip -o automatedtesting-$(Build.BuildId).zip
+                cd selenium
+                python3 login.py
