@@ -69,8 +69,8 @@ stages:
     displayName: 'Install Tools'
     environment:
       name: 'TEST'
-      resourceType: vm
-      tags: 'TEST'
+      resourceType: VirtualMachine
+      tags: TEST
     strategy:
       runOnce:
         deploy:
