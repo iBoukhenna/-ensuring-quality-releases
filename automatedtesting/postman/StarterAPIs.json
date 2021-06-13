@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Create User",
+			"name": "Create Employee",
 			"event": [
 				{
 					"listen": "test",
@@ -15,12 +15,12 @@
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
+							"pm.test(\"Create employee\", function () {",
+							"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"name\"));",
+							"});",
 							"",
-							"pm.test(\"Test created data\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.UserName).to.eql(pm.environment.get(\"username\"));",
-							"    pm.expect(jsonData.Password).to.eql(pm.environment.get(\"password\"));",
-							"});"
+							"var json = pm.response.json();",
+							"pm.environment.set(\"myid\", json.data.id);"
 						],
 						"type": "text/javascript"
 					}
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"UserName\": \"{{username}}\",\n    \"Password\": \"{{password}}\"\n}",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,20 +39,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/users",
+					"raw": "{{url}}/api/v1/create",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"users"
+						"v1",
+						"create"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get All Users",
+			"name": "Get All Employees",
 			"event": [
 				{
 					"listen": "test",
@@ -60,6 +61,9 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Get all employees\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
 							""
 						],
@@ -71,20 +75,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/users",
+					"raw": "{{url}}/api/v1/employees",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"users"
+						"v1",
+						"employees"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update User",
+			"name": "Update Employee",
 			"event": [
 				{
 					"listen": "test",
@@ -96,8 +101,9 @@
 							"\r",
 							"pm.test(\"Test updated data\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.UserName).to.eql(pm.environment.get(\"newusername\"));\r",
-							"    pm.expect(jsonData.Password).to.eql(pm.environment.get(\"newpassword\"));\r",
+							"    pm.expect(jsonData.data.name).to.eql(pm.environment.get(\"newname\"));\r",
+							"    pm.expect(jsonData.data.salary).to.eql(pm.environment.get(\"newsalary\"));\r",
+							"    pm.expect(jsonData.data.age).to.eql(pm.environment.get(\"newage\"));\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -109,7 +115,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"UserName\": \"{{newusername}}\",\r\n    \"Password\": \"{{newpassword}}\"\r\n}",
+					"raw": "{\r\n    \"name\": \"{{newname}}\",\r\n    \"salary\": \"{{newsalary}}\",\r\n    \"age\": \"{{newage}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -117,13 +123,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/users/{{myid}}",
+					"raw": "{{url}}/api/v1/update/{{myid}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"users",
+						"v1",
+						"update",
 						"{{myid}}"
 					]
 				}
@@ -131,7 +138,7 @@
 			"response": []
 		},
 		{
-			"name": "Get User",
+			"name": "Get Employee",
 			"event": [
 				{
 					"listen": "test",
@@ -143,7 +150,7 @@
 							"\r",
 							"pm.test(\"Test id\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"myid\")));\r",
+							"    pm.expect(jsonData.data.id).to.eql(parseInt(pm.environment.get(\"myid\")));\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -154,13 +161,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/users/{{myid}}",
+					"raw": "{{url}}/api/v1/employee/{{myid}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"users",
+						"v1",
+						"employee",
 						"{{myid}}"
 					]
 				}
@@ -177,7 +185,11 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							""
+							"\r",
+							"pm.test(\"Test id\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(parseInt(jsonData.data)).to.eql(pm.environment.get(\"myid\"));\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -187,13 +199,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/users/{{myid}}",
+					"raw": "{{url}}/api/v1/delete/{{myid}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
-						"users",
+						"v1",
+						"delete",
 						"{{myid}}"
 					]
 				}

@@ -9,41 +9,41 @@
 		},
 		{
 			"key": "url",
-			"value": "http://ensuring-quality-releases-repo-appservice.azurewebsites.net",
+			"value": "http://dummy.restapiexample.com",
 			"enabled": true
 		},
 		{
-			"key": "username",
+			"key": "name",
 			"value": "boukhenna",
 			"enabled": true
 		},
 		{
-			"key": "password",
-			"value": "AZErty123",
+			"key": "salary",
+			"value": "123456",
 			"enabled": true
 		},
 		{
-			"key": "newusername",
+			"key": "newname",
 			"value": "ibrahim",
 			"enabled": true
 		},
 		{
-			"key": "newpassword",
-			"value": "QWErty098",
+			"key": "newsalary",
+			"value": "456789",
 			"enabled": true
 		},
 		{
-			"key": "id",
-			"value": "20",
+			"key": "age",
+			"value": "31",
 			"enabled": true
 		},
 		{
-			"key": "newid",
-			"value": "21",
+			"key": "newage",
+			"value": "32",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2021-06-13T18:30:21.538Z",
+	"_postman_exported_at": "2021-06-13T21:22:19.301Z",
 	"_postman_exported_using": "Postman/8.6.1"
 }
