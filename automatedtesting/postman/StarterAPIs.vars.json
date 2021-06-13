@@ -1,14 +1,49 @@
 {
-	"id": "279e1f0c-fbe8-44c1-8bca-f596b012b969",
-	"name": "rob-environment",
+	"id": "b39b8170-f418-43de-ba1d-29f18371c6ab",
+	"name": "Starter APIs",
 	"values": [
 		{
 			"key": "myid",
 			"value": "1",
 			"enabled": true
+		},
+		{
+			"key": "url",
+			"value": "http://ensuring-quality-releases-repo-appservice.azurewebsites.net",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "boukhenna",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "AZErty123",
+			"enabled": true
+		},
+		{
+			"key": "newusername",
+			"value": "ibrahim",
+			"enabled": true
+		},
+		{
+			"key": "newpassword",
+			"value": "QWErty098",
+			"enabled": true
+		},
+		{
+			"key": "id",
+			"value": "20",
+			"enabled": true
+		},
+		{
+			"key": "newid",
+			"value": "21",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2020-11-19T21:57:43.588Z",
-	"_postman_exported_using": "Postman/7.34.0"
+	"_postman_exported_at": "2021-06-13T18:30:21.538Z",
+	"_postman_exported_using": "Postman/8.6.1"
 }
