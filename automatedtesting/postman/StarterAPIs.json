@@ -18,7 +18,6 @@
 							"",
 							"pm.test(\"Test created data\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.ID).to.eql(pm.environment.get(\"id\"));",
 							"    pm.expect(jsonData.UserName).to.eql(pm.environment.get(\"username\"));",
 							"    pm.expect(jsonData.Password).to.eql(pm.environment.get(\"password\"));",
 							"});"
@@ -32,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"ID\": \"{{id}}\",\n    \"UserName\": \"{{username}}\",\n    \"Password\": \"{{password}}\"\n}",
+					"raw": "{\n    \"UserName\": \"{{username}}\",\n    \"Password\": \"{{password}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -97,7 +96,6 @@
 							"\r",
 							"pm.test(\"Test updated data\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.ID).to.eql(pm.environment.get(\"newid\"));\r",
 							"    pm.expect(jsonData.UserName).to.eql(pm.environment.get(\"newusername\"));\r",
 							"    pm.expect(jsonData.Password).to.eql(pm.environment.get(\"newpassword\"));\r",
 							"});"
@@ -111,7 +109,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"ID\": \"{{newid}}\",\r\n    \"UserName\": \"{{newusername}}\",\r\n    \"Password\": \"{{newpassword}}\"\r\n}",
+					"raw": "{\r\n    \"UserName\": \"{{newusername}}\",\r\n    \"Password\": \"{{newpassword}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
