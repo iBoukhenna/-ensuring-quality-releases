@@ -171,7 +171,7 @@ stages:
             inputs:
               jmeterVersion: '5.2.1'
           - task: Bash@3
-            displayName: EnduranceTest
+            displayName: StarterTest
             inputs:
               targetType: 'inline'
               script: |
@@ -179,4 +179,4 @@ stages:
                 cd $(Pipeline.Workspace)/automatedtesting-artifact
                 unzip -o automatedtesting-$(Build.BuildId).zip
                 cd jmeter
-                jmeter -n -t Starter.jmx
+                jmeter -n -t Starter.jmx -Jresdir=dataset.csv -l output.csv -e -f -o JMeterResult
