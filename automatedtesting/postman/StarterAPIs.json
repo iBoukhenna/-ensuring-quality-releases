@@ -143,7 +143,7 @@
 							"\r",
 							"pm.test(\"Test id\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.ID).to.eql(pm.environment.get(\"myid\"));\r",
+							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"myid\")));\r",
 							"});"
 						],
 						"type": "text/javascript"
