@@ -89,6 +89,7 @@ stages:
         deploy:
           steps:
           - task: Bash@3
+            displayName: 'Install tools'
             inputs:
               targetType: 'inline'
               script: |
@@ -131,9 +132,17 @@ stages:
           script: 'newman run StarterAPIs.json \
                    -e StarterAPIs.vars.json \
                    --reporters cli,junit \
-                   --reporter-junit-export log/StarterAPIsPostmanResult.xml \
+                   --reporter-junit-export log/PostmanResult.xml \
                    --suppress-exit-code'
           workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+      - task: PublishTestResults@2
+        displayName: 'Publish Newman result'
+        inputs:
+          testRunner: 'JUnit'
+          searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman/log'
+          testResultsFiles: '*.xml'
+          mergeTestResults: true
+          testRunTitle: 'Publish Newman result'
   - deployment: Selenium
     environment:
       name:  'TEST'
@@ -144,15 +153,15 @@ stages:
         deploy:
           steps:
           - task: Bash@3
+            displayName: Run selenium
             inputs:
-              displayName: Run selenium
               targetType: 'inline'
               script: |
                 #! /bin/bash
                 cd $(Pipeline.Workspace)/automatedtesting-artifact
                 unzip -o automatedtesting-$(Build.BuildId).zip
                 cd selenium
-                python3 login.py
+                python3 login.py 2>&1 | tee SeleniumResult.log
   - deployment: JMeter
     environment:
       name:  'TEST'
