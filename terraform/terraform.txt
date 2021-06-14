@@ -1,0 +1,95 @@
+2021-06-14T18:54:15.9172699Z ##[section]Starting: terraform apply
+2021-06-14T18:54:15.9180160Z ==============================================================================
+2021-06-14T18:54:15.9180477Z Task         : Bash
+2021-06-14T18:54:15.9180759Z Description  : Run a Bash script on macOS, Linux, or Windows
+2021-06-14T18:54:15.9181016Z Version      : 3.182.0
+2021-06-14T18:54:15.9181262Z Author       : Microsoft Corporation
+2021-06-14T18:54:15.9181600Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2021-06-14T18:54:15.9181972Z ==============================================================================
+2021-06-14T18:54:16.0557778Z Generating script.
+2021-06-14T18:54:16.0574447Z Script contents:
+2021-06-14T18:54:16.0575025Z terraform apply -auto-approve
+2021-06-14T18:54:16.0585989Z ========================== Starting Command Output ===========================
+2021-06-14T18:54:16.0600136Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/d2718fef-9d8c-487e-9a71-97afc9bc45b2.sh
+2021-06-14T18:54:23.6715034Z [0m[1mmodule.resource_group.azurerm_resource_group.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib][0m
+2021-06-14T18:54:23.7213401Z [0m[1mmodule.networksecuritygroup.azurerm_network_security_group.nsg: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Network/networkSecurityGroups/ensuring-quality-releases-repo-networksecuritygroup][0m
+2021-06-14T18:54:23.7235122Z [0m[1mmodule.network.azurerm_virtual_network.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Network/virtualNetworks/ensuring-quality-releases-repo-network][0m
+2021-06-14T18:54:23.7240478Z [0m[1mmodule.publicip.azurerm_public_ip.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Network/publicIPAddresses/ensuring-quality-releases-repo-publicip-pubip][0m
+2021-06-14T18:54:23.7250214Z [0m[1mmodule.appservice.azurerm_app_service_plan.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Web/serverfarms/ensuring-quality-releases-repo-appservice][0m
+2021-06-14T18:54:23.9072153Z [0m[1mmodule.appservice.azurerm_app_service.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Web/sites/ensuring-quality-releases-repo-appservice][0m
+2021-06-14T18:54:24.0841574Z [0m[1mmodule.network.azurerm_subnet.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Network/virtualNetworks/ensuring-quality-releases-repo-network/subnets/ensuring-quality-releases-repo-network-sub][0m
+2021-06-14T18:54:24.2332218Z [0m[1mmodule.networksecuritygroup.azurerm_subnet_network_security_group_association.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Network/virtualNetworks/ensuring-quality-releases-repo-network/subnets/ensuring-quality-releases-repo-network-sub][0m
+2021-06-14T18:54:24.2342856Z [0m[1mmodule.vm.azurerm_network_interface.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Network/networkInterfaces/ensuring-quality-releases-repo-vm-nic][0m
+2021-06-14T18:54:24.3777932Z [0m[1mmodule.vm.azurerm_linux_virtual_machine.test: Refreshing state... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Compute/virtualMachines/ensuring-quality-releases-repo-vm-vm][0m
+2021-06-14T18:54:30.9323099Z [0m
+2021-06-14T18:54:30.9324416Z [1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+2021-06-14T18:54:30.9325123Z 
+2021-06-14T18:54:30.9326071Z [0mTerraform detected the following changes made outside of Terraform since the
+2021-06-14T18:54:30.9326708Z last "terraform apply":
+2021-06-14T18:54:30.9326992Z 
+2021-06-14T18:54:30.9429565Z [1m  # module.appservice.azurerm_app_service.test[0m has been changed[0m[0m
+2021-06-14T18:54:30.9430749Z [0m  [33m~[0m[0m resource "azurerm_app_service" "test" {
+2021-06-14T18:54:30.9431773Z       [33m~[0m [0m[1m[0mapp_settings[0m[0m                      = {
+2021-06-14T18:54:30.9432756Z           [32m+[0m [0m"WEBSITE_ENABLE_SYNC_UPDATE_SITE" = "true"
+2021-06-14T18:54:30.9433771Z           [33m~[0m [0m"WEBSITE_RUN_FROM_PACKAGE"        = "0" [33m->[0m [0m"1"
+2021-06-14T18:54:30.9434434Z         }
+2021-06-14T18:54:30.9435770Z         [1m[0mid[0m[0m                                = "/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Web/sites/ensuring-quality-releases-repo-appservice"
+2021-06-14T18:54:30.9437150Z         [1m[0mname[0m[0m                              = "ensuring-quality-releases-repo-appservice"
+2021-06-14T18:54:30.9438197Z         [1m[0mtags[0m[0m                              = {}
+2021-06-14T18:54:30.9439156Z         [90m# (14 unchanged attributes hidden)[0m[0m
+2021-06-14T18:54:30.9439712Z 
+2021-06-14T18:54:30.9440000Z 
+2021-06-14T18:54:30.9440300Z 
+2021-06-14T18:54:30.9440573Z 
+2021-06-14T18:54:30.9441308Z         [90m# (4 unchanged blocks hidden)[0m[0m
+2021-06-14T18:54:30.9441901Z     }
+2021-06-14T18:54:30.9442261Z 
+2021-06-14T18:54:30.9442815Z Unless you have made equivalent changes to your configuration, or ignored the
+2021-06-14T18:54:30.9443460Z relevant attributes using ignore_changes, the following plan may include
+2021-06-14T18:54:30.9444071Z actions to undo or respond to these changes.
+2021-06-14T18:54:30.9444805Z [90m
+2021-06-14T18:54:30.9445931Z ─────────────────────────────────────────────────────────────────────────────[0m
+2021-06-14T18:54:30.9446434Z 
+2021-06-14T18:54:30.9447006Z Terraform used the selected providers to generate the following execution
+2021-06-14T18:54:30.9447830Z plan. Resource actions are indicated with the following symbols:
+2021-06-14T18:54:30.9448838Z   [33m~[0m update in-place
+2021-06-14T18:54:30.9449579Z [0m
+2021-06-14T18:54:30.9450470Z Terraform will perform the following actions:
+2021-06-14T18:54:30.9451784Z 
+2021-06-14T18:54:30.9544490Z [1m  # module.appservice.azurerm_app_service.test[0m will be updated in-place[0m[0m
+2021-06-14T18:54:30.9546786Z [0m  [33m~[0m[0m resource "azurerm_app_service" "test" {
+2021-06-14T18:54:30.9547878Z       [33m~[0m [0m[1m[0mapp_settings[0m[0m                      = {
+2021-06-14T18:54:30.9548903Z           [31m-[0m [0m"WEBSITE_ENABLE_SYNC_UPDATE_SITE" = "true" [90m->[0m [0m[90mnull[0m[0m
+2021-06-14T18:54:30.9550246Z           [33m~[0m [0m"WEBSITE_RUN_FROM_PACKAGE"        = "1" [33m->[0m [0m"0"
+2021-06-14T18:54:30.9550894Z         }
+2021-06-14T18:54:30.9552090Z         [1m[0mid[0m[0m                                = "/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Web/sites/ensuring-quality-releases-repo-appservice"
+2021-06-14T18:54:30.9553625Z         [1m[0mname[0m[0m                              = "ensuring-quality-releases-repo-appservice"
+2021-06-14T18:54:30.9554582Z         [1m[0mtags[0m[0m                              = {}
+2021-06-14T18:54:30.9555458Z         [90m# (14 unchanged attributes hidden)[0m[0m
+2021-06-14T18:54:30.9556347Z 
+2021-06-14T18:54:30.9556597Z 
+2021-06-14T18:54:30.9556811Z 
+2021-06-14T18:54:30.9557019Z 
+2021-06-14T18:54:30.9557757Z         [90m# (4 unchanged blocks hidden)[0m[0m
+2021-06-14T18:54:30.9558289Z     }
+2021-06-14T18:54:30.9558530Z 
+2021-06-14T18:54:30.9559227Z [0m[1mPlan:[0m 0 to add, 1 to change, 0 to destroy.
+2021-06-14T18:54:36.5645507Z [0m[0m[1mmodule.appservice.azurerm_app_service.test: Modifying... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Web/sites/ensuring-quality-releases-repo-appservice][0m[0m
+2021-06-14T18:54:46.5670097Z [0m[1mmodule.appservice.azurerm_app_service.test: Still modifying... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-...uring-quality-releases-repo-appservice, 10s elapsed][0m[0m
+2021-06-14T18:54:56.5676090Z [0m[1mmodule.appservice.azurerm_app_service.test: Still modifying... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-...uring-quality-releases-repo-appservice, 20s elapsed][0m[0m
+2021-06-14T18:55:06.5681663Z [0m[1mmodule.appservice.azurerm_app_service.test: Still modifying... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-...uring-quality-releases-repo-appservice, 30s elapsed][0m[0m
+2021-06-14T18:55:16.5682673Z [0m[1mmodule.appservice.azurerm_app_service.test: Still modifying... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-...uring-quality-releases-repo-appservice, 40s elapsed][0m[0m
+2021-06-14T18:55:26.5687476Z [0m[1mmodule.appservice.azurerm_app_service.test: Still modifying... [id=/subscriptions/3b2b4316-967b-44a8-9c2f-...uring-quality-releases-repo-appservice, 50s elapsed][0m[0m
+2021-06-14T18:55:29.3221582Z [0m[1mmodule.appservice.azurerm_app_service.test: Modifications complete after 52s [id=/subscriptions/3b2b4316-967b-44a8-9c2f-9f5ff31f09cb/resourceGroups/ensuring-quality-releases-rg-ib/providers/Microsoft.Web/sites/ensuring-quality-releases-repo-appservice][0m
+2021-06-14T18:55:29.5606229Z [33m╷[0m[0m
+2021-06-14T18:55:29.5607202Z [33m│[0m [0m[1m[33mWarning: [0m[0m[1m"address_prefix": [DEPRECATED] Use the `address_prefixes` property instead.[0m
+2021-06-14T18:55:29.5608005Z [33m│[0m [0m
+2021-06-14T18:55:29.5608672Z [33m│[0m [0m[0m  with module.network.azurerm_subnet.test,
+2021-06-14T18:55:29.5609472Z [33m│[0m [0m  on ../../modules/network/network.tf line 7, in resource "azurerm_subnet" "test":
+2021-06-14T18:55:29.5610261Z [33m│[0m [0m   7: resource "azurerm_subnet" "test" [4m{[0m[0m
+2021-06-14T18:55:29.5611170Z [33m│[0m [0m
+2021-06-14T18:55:29.5611778Z [33m│[0m [0m(and one more similar warning elsewhere)
+2021-06-14T18:55:29.5612285Z [33m╵[0m[0m
+2021-06-14T18:55:29.8831420Z [0m[1m[32m
+2021-06-14T18:55:29.8831865Z Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+2021-06-14T18:55:29.8920732Z ##[section]Finishing: terraform apply

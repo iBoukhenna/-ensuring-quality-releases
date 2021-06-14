@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1623710791305,701,GET All Activities,200,OK,Starter Stress Test 1-1,text,true,,3109,233,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,697,0,557
+1623710792006,126,CREATE Activity,200,OK,Starter Stress Test 1-1,text,true,,343,351,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,126,0,0
+1623710792132,124,UPDATE Activity,200,OK,Starter Stress Test 1-1,text,true,,343,352,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/2,124,0,0
+1623710791768,518,GET All Activities,200,OK,Starter Stress Test 1-2,text,true,,3109,233,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,518,0,387
+1623710792256,125,GET Activity,200,OK,Starter Stress Test 1-1,text,true,,351,235,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/2,125,0,0
+1623710792287,123,CREATE Activity,200,OK,Starter Stress Test 1-2,text,true,,343,351,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,123,0,0
+1623710792382,122,DELETE Activity,200,OK,Starter Stress Test 1-1,,true,,211,257,2,3,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/2,122,0,0
+1623710792411,123,UPDATE Activity,200,OK,Starter Stress Test 1-2,text,true,,343,352,1,2,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/3,123,0,0
+1623710792534,122,GET Activity,200,OK,Starter Stress Test 1-2,text,true,,352,235,1,2,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/3,122,0,0
+1623710792657,125,DELETE Activity,200,OK,Starter Stress Test 1-2,,true,,211,257,1,2,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/3,125,0,0

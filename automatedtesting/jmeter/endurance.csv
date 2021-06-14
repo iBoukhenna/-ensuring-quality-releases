@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1623710791284,718,GET All Activities,200,OK,Starter Endurance Test 2-1,text,true,,3109,233,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,718,0,578
+1623710792003,125,CREATE Activity,200,OK,Starter Endurance Test 2-1,text,true,,343,351,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,125,0,0
+1623710792129,127,UPDATE Activity,200,OK,Starter Endurance Test 2-1,text,true,,343,352,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/1,127,0,0
+1623710791799,520,GET All Activities,200,OK,Starter Endurance Test 2-2,text,true,,3109,233,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,520,0,383
+1623710792256,122,GET Activity,200,OK,Starter Endurance Test 2-1,text,true,,352,235,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/1,122,0,0
+1623710792320,124,CREATE Activity,200,OK,Starter Endurance Test 2-2,text,true,,344,352,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities,124,0,0
+1623710792379,123,DELETE Activity,200,OK,Starter Endurance Test 2-1,,true,,211,257,2,4,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/1,123,0,0
+1623710792445,125,UPDATE Activity,200,OK,Starter Endurance Test 2-2,text,true,,344,353,1,2,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/4,125,0,0
+1623710792571,124,GET Activity,200,OK,Starter Endurance Test 2-2,text,true,,351,235,1,2,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/4,124,0,0
+1623710792695,124,DELETE Activity,200,OK,Starter Endurance Test 2-2,,true,,211,257,1,1,https://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/Activities/4,124,0,0

@@ -1,60 +1,60 @@
-2021-06-13T21:05:13.6104208Z ##[section]Starting: Run newman
-2021-06-13T21:05:13.6112360Z ==============================================================================
-2021-06-13T21:05:13.6112680Z Task         : Command line
-2021-06-13T21:05:13.6113015Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
-2021-06-13T21:05:13.6113306Z Version      : 2.182.0
-2021-06-13T21:05:13.6113538Z Author       : Microsoft Corporation
-2021-06-13T21:05:13.6113854Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
-2021-06-13T21:05:13.6114210Z ==============================================================================
-2021-06-13T21:05:13.7436221Z Generating script.
-2021-06-13T21:05:13.7447308Z Script contents:
-2021-06-13T21:05:13.7448320Z newman run StarterAPIs.json -e StarterAPIs.vars.json --reporters cli,junit --reporter-junit-export log/PostmanResult.xml --suppress-exit-code
-2021-06-13T21:05:13.7448947Z ========================== Starting Command Output ===========================
-2021-06-13T21:05:13.7472150Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/59c34aaa-4b0e-414c-bb8d-4d26ccfabed9.sh
-2021-06-13T21:05:16.6841716Z newman
-2021-06-13T21:05:16.6849090Z 
-2021-06-13T21:05:16.6856838Z Starter APIs
-2021-06-13T21:05:16.6876646Z 
-2021-06-13T21:05:16.6879344Z → Create User
-2021-06-13T21:05:33.1081850Z   POST http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users [200 OK, 479B, 16.3s]
-2021-06-13T21:05:33.1340802Z   ✓  Status code is 200
-2021-06-13T21:05:33.1358861Z   ✓  Test created data
-2021-06-13T21:05:33.1466635Z 
-2021-06-13T21:05:33.1467983Z → Get All Users
-2021-06-13T21:05:33.2676175Z   GET http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users [200 OK, 560B, 114ms]
-2021-06-13T21:05:33.2755927Z   ✓  Status code is 200
-2021-06-13T21:05:33.2830696Z 
-2021-06-13T21:05:33.2832996Z → Update User
-2021-06-13T21:05:33.4055545Z   PUT http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users/1 [200 OK, 477B, 115ms]
-2021-06-13T21:05:33.4121714Z   ✓  Status code is 200
-2021-06-13T21:05:33.4129368Z   ✓  Test updated data
-2021-06-13T21:05:33.4217804Z 
-2021-06-13T21:05:33.4232052Z → Get User
-2021-06-13T21:05:33.5067996Z   GET http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users/1 [200 OK, 467B, 78ms]
-2021-06-13T21:05:33.5160069Z   ✓  Status code is 200
-2021-06-13T21:05:33.5186568Z   ✓  Test id
-2021-06-13T21:05:33.5267989Z 
-2021-06-13T21:05:33.5269082Z → Delete User
-2021-06-13T21:05:33.6093872Z   DELETE http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users/1 [200 OK, 211B, 77ms]
-2021-06-13T21:05:33.6167998Z   ✓  Status code is 200
-2021-06-13T21:05:33.6509161Z 
-2021-06-13T21:05:33.6510737Z ┌─────────────────────────┬───────────────────┬───────────────────┐
-2021-06-13T21:05:33.6511559Z │                         │          executed │            failed │
-2021-06-13T21:05:33.6512255Z ├─────────────────────────┼───────────────────┼───────────────────┤
-2021-06-13T21:05:33.6513068Z │              iterations │                 1 │                 0 │
-2021-06-13T21:05:33.6513761Z ├─────────────────────────┼───────────────────┼───────────────────┤
-2021-06-13T21:05:33.6514481Z │                requests │                 5 │                 0 │
-2021-06-13T21:05:33.6515205Z ├─────────────────────────┼───────────────────┼───────────────────┤
-2021-06-13T21:05:33.6515824Z │            test-scripts │                 5 │                 0 │
-2021-06-13T21:05:33.6516462Z ├─────────────────────────┼───────────────────┼───────────────────┤
-2021-06-13T21:05:33.6517076Z │      prerequest-scripts │                 0 │                 0 │
-2021-06-13T21:05:33.6517743Z ├─────────────────────────┼───────────────────┼───────────────────┤
-2021-06-13T21:05:33.6518337Z │              assertions │                 8 │                 0 │
-2021-06-13T21:05:33.6518994Z ├─────────────────────────┴───────────────────┴───────────────────┤
-2021-06-13T21:05:33.6520527Z │ total run duration: 16.9s                                       │
-2021-06-13T21:05:33.6521706Z ├─────────────────────────────────────────────────────────────────┤
-2021-06-13T21:05:33.6522329Z │ total data received: 755B (approx)                              │
-2021-06-13T21:05:33.6523069Z ├─────────────────────────────────────────────────────────────────┤
-2021-06-13T21:05:33.6523719Z │ average response time: 3.3s [min: 77ms, max: 16.3s, s.d.: 6.5s] │
-2021-06-13T21:05:33.6524394Z └─────────────────────────────────────────────────────────────────┘
-2021-06-13T21:05:33.6716357Z ##[section]Finishing: Run newman
+2021-06-14T18:57:17.0618828Z ##[section]Starting: Run newman
+2021-06-14T18:57:17.0626980Z ==============================================================================
+2021-06-14T18:57:17.0627255Z Task         : Command line
+2021-06-14T18:57:17.0627525Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2021-06-14T18:57:17.0627795Z Version      : 2.182.0
+2021-06-14T18:57:17.0627988Z Author       : Microsoft Corporation
+2021-06-14T18:57:17.0628282Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2021-06-14T18:57:17.0628595Z ==============================================================================
+2021-06-14T18:57:17.1637839Z Generating script.
+2021-06-14T18:57:17.1644266Z Script contents:
+2021-06-14T18:57:17.1645183Z newman run StarterAPIs.json -e StarterAPIs.vars.json --reporters cli,junit --reporter-junit-export log/PostmanResult.xml --suppress-exit-code
+2021-06-14T18:57:17.1645790Z ========================== Starting Command Output ===========================
+2021-06-14T18:57:17.1662097Z [command]/bin/bash --noprofile --norc /home/vsts/work/_temp/bffcce5c-849d-4454-bb67-07229fe4f09e.sh
+2021-06-14T18:57:20.9036935Z newman
+2021-06-14T18:57:20.9037799Z 
+2021-06-14T18:57:20.9038370Z Starter APIs
+2021-06-14T18:57:20.9054579Z 
+2021-06-14T18:57:20.9055654Z → Create User
+2021-06-14T18:57:36.7587819Z   POST http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users [200 OK, 479B, 15.8s]
+2021-06-14T18:57:36.7767091Z   ✓  Status code is 200
+2021-06-14T18:57:36.7775094Z   ✓  Test created data
+2021-06-14T18:57:36.7852733Z 
+2021-06-14T18:57:36.7853610Z → Get All Users
+2021-06-14T18:57:36.9156487Z   GET http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users [200 OK, 560B, 126ms]
+2021-06-14T18:57:36.9229146Z   ✓  Status code is 200
+2021-06-14T18:57:36.9355208Z 
+2021-06-14T18:57:36.9356286Z → Update User
+2021-06-14T18:57:37.0644278Z   PUT http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users/1 [200 OK, 477B, 122ms]
+2021-06-14T18:57:37.0707466Z   ✓  Status code is 200
+2021-06-14T18:57:37.0711753Z   ✓  Test updated data
+2021-06-14T18:57:37.0768030Z 
+2021-06-14T18:57:37.0768768Z → Get User
+2021-06-14T18:57:37.1768313Z   GET http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users/1 [200 OK, 467B, 94ms]
+2021-06-14T18:57:37.1832480Z   ✓  Status code is 200
+2021-06-14T18:57:37.1837222Z   ✓  Test id
+2021-06-14T18:57:37.1889993Z 
+2021-06-14T18:57:37.1891003Z → Delete User
+2021-06-14T18:57:37.2865454Z   DELETE http://ensuring-quality-releases-repo-appservice.azurewebsites.net/api/users/1 [200 OK, 211B, 92ms]
+2021-06-14T18:57:37.2916943Z   ✓  Status code is 200
+2021-06-14T18:57:37.3209551Z 
+2021-06-14T18:57:37.3210997Z ┌─────────────────────────┬───────────────────┬───────────────────┐
+2021-06-14T18:57:37.3211805Z │                         │          executed │            failed │
+2021-06-14T18:57:37.3212400Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2021-06-14T18:57:37.3212964Z │              iterations │                 1 │                 0 │
+2021-06-14T18:57:37.3213492Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2021-06-14T18:57:37.3213987Z │                requests │                 5 │                 0 │
+2021-06-14T18:57:37.3214732Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2021-06-14T18:57:37.3215225Z │            test-scripts │                 5 │                 0 │
+2021-06-14T18:57:37.3215764Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2021-06-14T18:57:37.3216263Z │      prerequest-scripts │                 0 │                 0 │
+2021-06-14T18:57:37.3216786Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2021-06-14T18:57:37.3217320Z │              assertions │                 8 │                 0 │
+2021-06-14T18:57:37.3217855Z ├─────────────────────────┴───────────────────┴───────────────────┤
+2021-06-14T18:57:37.3218343Z │ total run duration: 16.3s                                       │
+2021-06-14T18:57:37.3219103Z ├─────────────────────────────────────────────────────────────────┤
+2021-06-14T18:57:37.3219604Z │ total data received: 755B (approx)                              │
+2021-06-14T18:57:37.3220130Z ├─────────────────────────────────────────────────────────────────┤
+2021-06-14T18:57:37.3220656Z │ average response time: 3.2s [min: 92ms, max: 15.8s, s.d.: 6.2s] │
+2021-06-14T18:57:37.3221215Z └─────────────────────────────────────────────────────────────────┘
+2021-06-14T18:57:37.3419249Z ##[section]Finishing: Run newman

@@ -1,144 +1,147 @@
-2021-06-13T21:05:44.2886495Z ##[section]Starting: Run selenium
-2021-06-13T21:05:44.2896187Z ==============================================================================
-2021-06-13T21:05:44.2896826Z Task         : Bash
-2021-06-13T21:05:44.2897084Z Description  : Run a Bash script on macOS, Linux, or Windows
-2021-06-13T21:05:44.2897349Z Version      : 3.182.0
-2021-06-13T21:05:44.2897572Z Author       : Microsoft Corporation
-2021-06-13T21:05:44.2898057Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
-2021-06-13T21:05:44.2898410Z ==============================================================================
-2021-06-13T21:05:44.4642624Z Generating script.
-2021-06-13T21:05:44.4680112Z ========================== Starting Command Output ===========================
-2021-06-13T21:05:44.4720100Z [command]/bin/bash --noprofile --norc /home/adminuser/azagent/_work/_temp/b588da99-0ccc-4a51-a604-aef1fe0d776f.sh
-2021-06-13T21:05:44.4835515Z Archive:  automatedtesting-166.zip
-2021-06-13T21:05:44.4842354Z   inflating: jmeter/Starter.jmx      
-2021-06-13T21:05:44.4848847Z   inflating: jmeter/fakerestapi/Content/font-awesome.min.css  
-2021-06-13T21:05:44.4862748Z   inflating: jmeter/fakerestapi/Content/bootstrap.css  
-2021-06-13T21:05:44.4868821Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.min.css.map  
-2021-06-13T21:05:44.4876388Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.css.map  
-2021-06-13T21:05:44.4886859Z   inflating: jmeter/fakerestapi/Content/bootstrap.min.css.map  
-2021-06-13T21:05:44.4890686Z   inflating: jmeter/fakerestapi/Content/Site.css  
-2021-06-13T21:05:44.4896757Z   inflating: jmeter/fakerestapi/Content/font-awesome.css  
-2021-06-13T21:05:44.4911014Z   inflating: jmeter/fakerestapi/Content/bootstrap.min.css  
-2021-06-13T21:05:44.4917493Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.css  
-2021-06-13T21:05:44.4923663Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.min.css  
-2021-06-13T21:05:44.4953606Z   inflating: jmeter/fakerestapi/Content/bootstrap.css.map  
-2021-06-13T21:05:44.4960789Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.woff  
-2021-06-13T21:05:44.4982176Z   inflating: jmeter/fakerestapi/fonts/FontAwesome.otf  
-2021-06-13T21:05:44.4989724Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.eot  
-2021-06-13T21:05:44.4998073Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.eot  
-2021-06-13T21:05:44.5013455Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.svg  
-2021-06-13T21:05:44.5048358Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.svg  
-2021-06-13T21:05:44.5058840Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.woff2  
-2021-06-13T21:05:44.5078313Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.ttf  
-2021-06-13T21:05:44.5092128Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.woff  
-2021-06-13T21:05:44.5098669Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.woff2  
-2021-06-13T21:05:44.5108191Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.ttf  
-2021-06-13T21:05:44.5112449Z   inflating: jmeter/fakerestapi/Views/Shared/_Layout.cshtml  
-2021-06-13T21:05:44.5116032Z   inflating: jmeter/fakerestapi/Views/Shared/Error.cshtml  
-2021-06-13T21:05:44.5119960Z   inflating: jmeter/fakerestapi/Views/Home/Index.cshtml  
-2021-06-13T21:05:44.5123631Z   inflating: jmeter/fakerestapi/Views/Web.config  
-2021-06-13T21:05:44.5127159Z   inflating: jmeter/fakerestapi/Views/_ViewStart.cshtml  
-2021-06-13T21:05:44.5130895Z   inflating: jmeter/fakerestapi/packages.config  
-2021-06-13T21:05:44.5139205Z   inflating: jmeter/fakerestapi/Scripts/modernizr-2.8.3.js  
-2021-06-13T21:05:44.5144556Z   inflating: jmeter/fakerestapi/Scripts/_references.js  
-2021-06-13T21:05:44.5150278Z   inflating: jmeter/fakerestapi/Scripts/respond.matchmedia.addListener.js  
-2021-06-13T21:05:44.5157261Z   inflating: jmeter/fakerestapi/Scripts/bootstrap.min.js  
-2021-06-13T21:05:44.5167971Z   inflating: jmeter/fakerestapi/Scripts/bootstrap.js  
-2021-06-13T21:05:44.5208768Z   inflating: jmeter/fakerestapi/Scripts/jquery-2.2.2.js  
-2021-06-13T21:05:44.5213118Z   inflating: jmeter/fakerestapi/Scripts/respond.js  
-2021-06-13T21:05:44.5228820Z   inflating: jmeter/fakerestapi/Scripts/jquery-2.2.2.min.map  
-2021-06-13T21:05:44.5234783Z   inflating: jmeter/fakerestapi/Scripts/respond.min.js  
-2021-06-13T21:05:44.5249921Z   inflating: jmeter/fakerestapi/Scripts/jquery-2.2.2.min.js  
-2021-06-13T21:05:44.5255302Z   inflating: jmeter/fakerestapi/Scripts/respond.matchmedia.addListener.min.js  
-2021-06-13T21:05:44.5260700Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Shared/_Layout.cshtml  
-2021-06-13T21:05:44.5265224Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Web.config  
-2021-06-13T21:05:44.5269723Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/_ViewStart.cshtml  
-2021-06-13T21:05:44.5275304Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/Api.cshtml  
-2021-06-13T21:05:44.5279654Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/ResourceModel.cshtml  
-2021-06-13T21:05:44.5284052Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/Index.cshtml  
-2021-06-13T21:05:44.5287879Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml  
-2021-06-13T21:05:44.5292133Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml  
-2021-06-13T21:05:44.5295820Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml  
-2021-06-13T21:05:44.5299569Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml  
-2021-06-13T21:05:44.5303607Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml  
-2021-06-13T21:05:44.5307132Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml  
-2021-06-13T21:05:44.5311623Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml  
-2021-06-13T21:05:44.5316304Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml  
-2021-06-13T21:05:44.5320481Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml  
-2021-06-13T21:05:44.5324759Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml  
-2021-06-13T21:05:44.5330333Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml  
-2021-06-13T21:05:44.5334441Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml  
-2021-06-13T21:05:44.5338702Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml  
-2021-06-13T21:05:44.5343027Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml  
-2021-06-13T21:05:44.5348139Z   inflating: jmeter/fakerestapi/Areas/HelpPage/HelpPage.css  
-2021-06-13T21:05:44.5356285Z   inflating: jmeter/fakerestapi/favicon.ico  
-2021-06-13T21:05:44.5360081Z   inflating: jmeter/fakerestapi/Global.asax  
-2021-06-13T21:05:44.5364288Z   inflating: jmeter/fakerestapi/Web.config  
-2021-06-13T21:05:44.5389257Z   inflating: jmeter/fakerestapi/bin/FakeRestAPI.Web.pdb  
-2021-06-13T21:05:44.5449819Z   inflating: jmeter/fakerestapi/bin/Newtonsoft.Json.dll  
-2021-06-13T21:05:44.5733156Z   inflating: jmeter/fakerestapi/bin/Swashbuckle.Core.dll  
-2021-06-13T21:05:44.5742037Z   inflating: jmeter/fakerestapi/bin/System.Web.WebPages.Razor.dll  
-2021-06-13T21:05:44.5770527Z   inflating: jmeter/fakerestapi/bin/System.Web.WebPages.dll  
-2021-06-13T21:05:44.5797117Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.RegistrationByConvention.dll  
-2021-06-13T21:05:44.5807881Z   inflating: jmeter/fakerestapi/bin/WebActivatorEx.dll  
-2021-06-13T21:05:44.5823297Z   inflating: jmeter/fakerestapi/bin/System.Web.Http.WebHost.dll  
-2021-06-13T21:05:44.5836493Z   inflating: jmeter/fakerestapi/bin/FakeRestAPI.Web.dll  
-2021-06-13T21:05:44.5843776Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Diagnostics.StackTrace.dll  
-2021-06-13T21:05:44.5854539Z   inflating: jmeter/fakerestapi/bin/roslyn/vbc.exe  
-2021-06-13T21:05:44.5872353Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll  
-2021-06-13T21:05:44.5876792Z   inflating: jmeter/fakerestapi/bin/roslyn/VBCSCompiler.exe.config  
-2021-06-13T21:05:44.5917616Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Reflection.Metadata.dll  
-2021-06-13T21:05:44.5925571Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll  
-2021-06-13T21:05:44.6069245Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll  
-2021-06-13T21:05:44.6073827Z   inflating: jmeter/fakerestapi/bin/roslyn/csc.rsp  
-2021-06-13T21:05:44.6078362Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CSharp.Core.targets  
-2021-06-13T21:05:44.6089413Z   inflating: jmeter/fakerestapi/bin/roslyn/csc.exe  
-2021-06-13T21:05:44.6114596Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Collections.Immutable.dll  
-2021-06-13T21:05:44.6624911Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll  
-2021-06-13T21:05:44.6630076Z   inflating: jmeter/fakerestapi/bin/roslyn/vbc.rsp  
-2021-06-13T21:05:44.6634191Z   inflating: jmeter/fakerestapi/bin/roslyn/csi.rsp  
-2021-06-13T21:05:44.6638037Z   inflating: jmeter/fakerestapi/bin/roslyn/csc.exe.config  
-2021-06-13T21:05:44.6669085Z   inflating: jmeter/fakerestapi/bin/roslyn/System.AppContext.dll  
-2021-06-13T21:05:44.6702488Z   inflating: jmeter/fakerestapi/bin/roslyn/VBCSCompiler.exe  
-2021-06-13T21:05:44.6703213Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll  
-2021-06-13T21:05:44.6703801Z   inflating: jmeter/fakerestapi/bin/roslyn/System.IO.FileSystem.dll  
-2021-06-13T21:05:44.6704409Z   inflating: jmeter/fakerestapi/bin/roslyn/System.IO.FileSystem.Primitives.dll  
-2021-06-13T21:05:44.7213046Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll  
-2021-06-13T21:05:44.7219324Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.VisualBasic.Core.targets  
-2021-06-13T21:05:44.7415683Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.dll  
-2021-06-13T21:05:44.7521361Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll  
-2021-06-13T21:05:44.7527886Z   inflating: jmeter/fakerestapi/bin/roslyn/csi.exe  
-2021-06-13T21:05:44.7534743Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Console.dll  
-2021-06-13T21:05:44.7539151Z   inflating: jmeter/fakerestapi/bin/roslyn/vbc.exe.config  
-2021-06-13T21:05:44.7549203Z   inflating: jmeter/fakerestapi/bin/System.Web.Http.Cors.dll  
-2021-06-13T21:05:44.7560577Z   inflating: jmeter/fakerestapi/bin/NLipsum.Core.dll  
-2021-06-13T21:05:44.7568658Z   inflating: jmeter/fakerestapi/bin/System.Web.Cors.dll  
-2021-06-13T21:05:44.7582089Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.Configuration.dll  
-2021-06-13T21:05:44.7590010Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.ServiceLocation.dll  
-2021-06-13T21:05:44.7600990Z   inflating: jmeter/fakerestapi/bin/Microsoft.Web.Infrastructure.dll  
-2021-06-13T21:05:44.7610159Z   inflating: jmeter/fakerestapi/bin/FakeRestAPI.Web.XML  
-2021-06-13T21:05:44.7665132Z   inflating: jmeter/fakerestapi/bin/System.Web.Http.dll  
-2021-06-13T21:05:44.7741599Z   inflating: jmeter/fakerestapi/bin/System.Web.Mvc.dll  
-2021-06-13T21:05:44.7748477Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.ServiceLocation.pdb  
-2021-06-13T21:05:44.7889982Z   inflating: jmeter/fakerestapi/bin/WebGrease.dll  
-2021-06-13T21:05:44.7896996Z   inflating: jmeter/fakerestapi/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll  
-2021-06-13T21:05:44.7922542Z   inflating: jmeter/fakerestapi/bin/System.Net.Http.Formatting.dll  
-2021-06-13T21:05:44.7940336Z   inflating: jmeter/fakerestapi/bin/System.Web.Helpers.dll  
-2021-06-13T21:05:44.7976665Z   inflating: jmeter/fakerestapi/bin/Antlr3.Runtime.pdb  
-2021-06-13T21:05:44.8002752Z   inflating: jmeter/fakerestapi/bin/Antlr3.Runtime.dll  
-2021-06-13T21:05:44.8051976Z   inflating: jmeter/fakerestapi/bin/System.Web.Razor.dll  
-2021-06-13T21:05:44.8057090Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.WebApi.dll  
-2021-06-13T21:05:44.8076780Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.dll  
-2021-06-13T21:05:44.8088127Z   inflating: jmeter/fakerestapi/bin/System.Web.WebPages.Deployment.dll  
-2021-06-13T21:05:44.8101149Z   inflating: jmeter/fakerestapi/bin/System.Web.Optimization.dll  
-2021-06-13T21:05:44.8106808Z   inflating: postman/StarterAPIs.json  
-2021-06-13T21:05:44.8112095Z   inflating: postman/StarterAPIs.vars.json  
-2021-06-13T21:05:44.8116703Z   inflating: selenium/login.py       
-2021-06-13T21:05:48.7625453Z Starting the browser...
-2021-06-13T21:05:48.7657401Z Browser started successfully.
-2021-06-13T21:05:48.7660385Z Navigating to the demo page to login.
-2021-06-13T21:05:48.7660925Z A user {user} is attempting to log
-2021-06-13T21:05:48.7661204Z Login success.
-2021-06-13T21:05:48.7666060Z Adding all products to cart...
-2021-06-13T21:05:48.7666396Z Removing all products from cart...
-2021-06-13T21:05:48.8175202Z ##[section]Finishing: Run selenium
+2021-06-14T18:57:45.0881792Z ##[section]Starting: Run selenium
+2021-06-14T18:57:45.0890454Z ==============================================================================
+2021-06-14T18:57:45.0890756Z Task         : Bash
+2021-06-14T18:57:45.0891020Z Description  : Run a Bash script on macOS, Linux, or Windows
+2021-06-14T18:57:45.0891286Z Version      : 3.182.0
+2021-06-14T18:57:45.0891514Z Author       : Microsoft Corporation
+2021-06-14T18:57:45.0892122Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2021-06-14T18:57:45.0892669Z ==============================================================================
+2021-06-14T18:57:45.2697803Z Generating script.
+2021-06-14T18:57:45.2743374Z ========================== Starting Command Output ===========================
+2021-06-14T18:57:45.2780601Z [command]/bin/bash --noprofile --norc /home/adminuser/azagent/_work/_temp/95669684-ce3d-4b06-86b4-441ba2807bb4.sh
+2021-06-14T18:57:45.2856821Z Archive:  automatedtesting-182.zip
+2021-06-14T18:57:45.2863994Z   inflating: jmeter/Starter.jmx      
+2021-06-14T18:57:45.2870036Z   inflating: jmeter/fakerestapi/Content/font-awesome.min.css  
+2021-06-14T18:57:45.2882360Z   inflating: jmeter/fakerestapi/Content/bootstrap.css  
+2021-06-14T18:57:45.2886544Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.min.css.map  
+2021-06-14T18:57:45.2893969Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.css.map  
+2021-06-14T18:57:45.2903996Z   inflating: jmeter/fakerestapi/Content/bootstrap.min.css.map  
+2021-06-14T18:57:45.2908048Z   inflating: jmeter/fakerestapi/Content/Site.css  
+2021-06-14T18:57:45.2914733Z   inflating: jmeter/fakerestapi/Content/font-awesome.css  
+2021-06-14T18:57:45.2930821Z   inflating: jmeter/fakerestapi/Content/bootstrap.min.css  
+2021-06-14T18:57:45.2937183Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.css  
+2021-06-14T18:57:45.2944209Z   inflating: jmeter/fakerestapi/Content/bootstrap-theme.min.css  
+2021-06-14T18:57:45.2973985Z   inflating: jmeter/fakerestapi/Content/bootstrap.css.map  
+2021-06-14T18:57:45.2980110Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.woff  
+2021-06-14T18:57:45.2996110Z   inflating: jmeter/fakerestapi/fonts/FontAwesome.otf  
+2021-06-14T18:57:45.3003021Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.eot  
+2021-06-14T18:57:45.3015109Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.eot  
+2021-06-14T18:57:45.3045416Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.svg  
+2021-06-14T18:57:45.3079801Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.svg  
+2021-06-14T18:57:45.3090100Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.woff2  
+2021-06-14T18:57:45.3112912Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.ttf  
+2021-06-14T18:57:45.3124388Z   inflating: jmeter/fakerestapi/fonts/fontawesome-webfont.woff  
+2021-06-14T18:57:45.3129994Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.woff2  
+2021-06-14T18:57:45.3138900Z   inflating: jmeter/fakerestapi/fonts/glyphicons-halflings-regular.ttf  
+2021-06-14T18:57:45.3143707Z   inflating: jmeter/fakerestapi/Views/Shared/_Layout.cshtml  
+2021-06-14T18:57:45.3147761Z   inflating: jmeter/fakerestapi/Views/Shared/Error.cshtml  
+2021-06-14T18:57:45.3151776Z   inflating: jmeter/fakerestapi/Views/Home/Index.cshtml  
+2021-06-14T18:57:45.3155494Z   inflating: jmeter/fakerestapi/Views/Web.config  
+2021-06-14T18:57:45.3159685Z   inflating: jmeter/fakerestapi/Views/_ViewStart.cshtml  
+2021-06-14T18:57:45.3164265Z   inflating: jmeter/fakerestapi/packages.config  
+2021-06-14T18:57:45.3172601Z   inflating: jmeter/fakerestapi/Scripts/modernizr-2.8.3.js  
+2021-06-14T18:57:45.3176352Z   inflating: jmeter/fakerestapi/Scripts/_references.js  
+2021-06-14T18:57:45.3180832Z   inflating: jmeter/fakerestapi/Scripts/respond.matchmedia.addListener.js  
+2021-06-14T18:57:45.3187585Z   inflating: jmeter/fakerestapi/Scripts/bootstrap.min.js  
+2021-06-14T18:57:45.3195630Z   inflating: jmeter/fakerestapi/Scripts/bootstrap.js  
+2021-06-14T18:57:45.3224347Z   inflating: jmeter/fakerestapi/Scripts/jquery-2.2.2.js  
+2021-06-14T18:57:45.3229979Z   inflating: jmeter/fakerestapi/Scripts/respond.js  
+2021-06-14T18:57:45.3247622Z   inflating: jmeter/fakerestapi/Scripts/jquery-2.2.2.min.map  
+2021-06-14T18:57:45.3251846Z   inflating: jmeter/fakerestapi/Scripts/respond.min.js  
+2021-06-14T18:57:45.3265357Z   inflating: jmeter/fakerestapi/Scripts/jquery-2.2.2.min.js  
+2021-06-14T18:57:45.3270064Z   inflating: jmeter/fakerestapi/Scripts/respond.matchmedia.addListener.min.js  
+2021-06-14T18:57:45.3275568Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Shared/_Layout.cshtml  
+2021-06-14T18:57:45.3280664Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Web.config  
+2021-06-14T18:57:45.3285665Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/_ViewStart.cshtml  
+2021-06-14T18:57:45.3290601Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/Api.cshtml  
+2021-06-14T18:57:45.3295289Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/ResourceModel.cshtml  
+2021-06-14T18:57:45.3299234Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/Index.cshtml  
+2021-06-14T18:57:45.3303492Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml  
+2021-06-14T18:57:45.3307798Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml  
+2021-06-14T18:57:45.3312235Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml  
+2021-06-14T18:57:45.3316178Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml  
+2021-06-14T18:57:45.3320159Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml  
+2021-06-14T18:57:45.3325056Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml  
+2021-06-14T18:57:45.3329297Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml  
+2021-06-14T18:57:45.3333304Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml  
+2021-06-14T18:57:45.3337295Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml  
+2021-06-14T18:57:45.3341684Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml  
+2021-06-14T18:57:45.3346553Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml  
+2021-06-14T18:57:45.3350478Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml  
+2021-06-14T18:57:45.3354475Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml  
+2021-06-14T18:57:45.3358137Z   inflating: jmeter/fakerestapi/Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml  
+2021-06-14T18:57:45.3362077Z   inflating: jmeter/fakerestapi/Areas/HelpPage/HelpPage.css  
+2021-06-14T18:57:45.3368917Z   inflating: jmeter/fakerestapi/favicon.ico  
+2021-06-14T18:57:45.3372534Z   inflating: jmeter/fakerestapi/Global.asax  
+2021-06-14T18:57:45.3376803Z   inflating: jmeter/fakerestapi/Web.config  
+2021-06-14T18:57:45.3397020Z   inflating: jmeter/fakerestapi/bin/FakeRestAPI.Web.pdb  
+2021-06-14T18:57:45.3517030Z   inflating: jmeter/fakerestapi/bin/Newtonsoft.Json.dll  
+2021-06-14T18:57:45.3803163Z   inflating: jmeter/fakerestapi/bin/Swashbuckle.Core.dll  
+2021-06-14T18:57:45.3813415Z   inflating: jmeter/fakerestapi/bin/System.Web.WebPages.Razor.dll  
+2021-06-14T18:57:45.3843360Z   inflating: jmeter/fakerestapi/bin/System.Web.WebPages.dll  
+2021-06-14T18:57:45.3850794Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.RegistrationByConvention.dll  
+2021-06-14T18:57:45.3856132Z   inflating: jmeter/fakerestapi/bin/WebActivatorEx.dll  
+2021-06-14T18:57:45.3872222Z   inflating: jmeter/fakerestapi/bin/System.Web.Http.WebHost.dll  
+2021-06-14T18:57:45.3884034Z   inflating: jmeter/fakerestapi/bin/FakeRestAPI.Web.dll  
+2021-06-14T18:57:45.3890809Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Diagnostics.StackTrace.dll  
+2021-06-14T18:57:45.3901736Z   inflating: jmeter/fakerestapi/bin/roslyn/vbc.exe  
+2021-06-14T18:57:45.3916594Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll  
+2021-06-14T18:57:45.3920658Z   inflating: jmeter/fakerestapi/bin/roslyn/VBCSCompiler.exe.config  
+2021-06-14T18:57:45.3953006Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Reflection.Metadata.dll  
+2021-06-14T18:57:45.3959899Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll  
+2021-06-14T18:57:45.4103916Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll  
+2021-06-14T18:57:45.4108582Z   inflating: jmeter/fakerestapi/bin/roslyn/csc.rsp  
+2021-06-14T18:57:45.4113829Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CSharp.Core.targets  
+2021-06-14T18:57:45.4122440Z   inflating: jmeter/fakerestapi/bin/roslyn/csc.exe  
+2021-06-14T18:57:45.4147694Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Collections.Immutable.dll  
+2021-06-14T18:57:45.4679753Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll  
+2021-06-14T18:57:45.4694530Z   inflating: jmeter/fakerestapi/bin/roslyn/vbc.rsp  
+2021-06-14T18:57:45.4698802Z   inflating: jmeter/fakerestapi/bin/roslyn/csi.rsp  
+2021-06-14T18:57:45.4703285Z   inflating: jmeter/fakerestapi/bin/roslyn/csc.exe.config  
+2021-06-14T18:57:45.4742648Z   inflating: jmeter/fakerestapi/bin/roslyn/System.AppContext.dll  
+2021-06-14T18:57:45.4743449Z   inflating: jmeter/fakerestapi/bin/roslyn/VBCSCompiler.exe  
+2021-06-14T18:57:45.4758293Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll  
+2021-06-14T18:57:45.4764396Z   inflating: jmeter/fakerestapi/bin/roslyn/System.IO.FileSystem.dll  
+2021-06-14T18:57:45.4769826Z   inflating: jmeter/fakerestapi/bin/roslyn/System.IO.FileSystem.Primitives.dll  
+2021-06-14T18:57:45.5204788Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll  
+2021-06-14T18:57:45.5209605Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.VisualBasic.Core.targets  
+2021-06-14T18:57:45.5405663Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.CodeAnalysis.dll  
+2021-06-14T18:57:45.5514741Z   inflating: jmeter/fakerestapi/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll  
+2021-06-14T18:57:45.5521124Z   inflating: jmeter/fakerestapi/bin/roslyn/csi.exe  
+2021-06-14T18:57:45.5526785Z   inflating: jmeter/fakerestapi/bin/roslyn/System.Console.dll  
+2021-06-14T18:57:45.5531852Z   inflating: jmeter/fakerestapi/bin/roslyn/vbc.exe.config  
+2021-06-14T18:57:45.5541943Z   inflating: jmeter/fakerestapi/bin/System.Web.Http.Cors.dll  
+2021-06-14T18:57:45.5554694Z   inflating: jmeter/fakerestapi/bin/NLipsum.Core.dll  
+2021-06-14T18:57:45.5561566Z   inflating: jmeter/fakerestapi/bin/System.Web.Cors.dll  
+2021-06-14T18:57:45.5576651Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.Configuration.dll  
+2021-06-14T18:57:45.5583983Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.ServiceLocation.dll  
+2021-06-14T18:57:45.5592876Z   inflating: jmeter/fakerestapi/bin/Microsoft.Web.Infrastructure.dll  
+2021-06-14T18:57:45.5599476Z   inflating: jmeter/fakerestapi/bin/FakeRestAPI.Web.XML  
+2021-06-14T18:57:45.5664253Z   inflating: jmeter/fakerestapi/bin/System.Web.Http.dll  
+2021-06-14T18:57:45.5730577Z   inflating: jmeter/fakerestapi/bin/System.Web.Mvc.dll  
+2021-06-14T18:57:45.5737532Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.ServiceLocation.pdb  
+2021-06-14T18:57:45.5873325Z   inflating: jmeter/fakerestapi/bin/WebGrease.dll  
+2021-06-14T18:57:45.5881457Z   inflating: jmeter/fakerestapi/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll  
+2021-06-14T18:57:45.5905926Z   inflating: jmeter/fakerestapi/bin/System.Net.Http.Formatting.dll  
+2021-06-14T18:57:45.5924330Z   inflating: jmeter/fakerestapi/bin/System.Web.Helpers.dll  
+2021-06-14T18:57:45.5966315Z   inflating: jmeter/fakerestapi/bin/Antlr3.Runtime.pdb  
+2021-06-14T18:57:45.5982694Z   inflating: jmeter/fakerestapi/bin/Antlr3.Runtime.dll  
+2021-06-14T18:57:45.6014715Z   inflating: jmeter/fakerestapi/bin/System.Web.Razor.dll  
+2021-06-14T18:57:45.6020957Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.WebApi.dll  
+2021-06-14T18:57:45.6044528Z   inflating: jmeter/fakerestapi/bin/Microsoft.Practices.Unity.dll  
+2021-06-14T18:57:45.6056601Z   inflating: jmeter/fakerestapi/bin/System.Web.WebPages.Deployment.dll  
+2021-06-14T18:57:45.6070347Z   inflating: jmeter/fakerestapi/bin/System.Web.Optimization.dll  
+2021-06-14T18:57:45.6075437Z   inflating: jmeter/dataset.csv      
+2021-06-14T18:57:45.6079905Z   inflating: postman/StarterAPIs.json  
+2021-06-14T18:57:45.6084548Z   inflating: postman/postman.txt     
+2021-06-14T18:57:45.6088479Z   inflating: postman/StarterAPIs.vars.json  
+2021-06-14T18:57:45.6093421Z   inflating: selenium/selenium.txt   
+2021-06-14T18:57:45.6097435Z   inflating: selenium/login.py       
+2021-06-14T18:57:49.1147545Z Starting the browser...
+2021-06-14T18:57:49.1148579Z Browser started successfully.
+2021-06-14T18:57:49.1149153Z Navigating to the demo page to login.
+2021-06-14T18:57:49.1150095Z A user {user} is attempting to log
+2021-06-14T18:57:49.1150805Z Login success.
+2021-06-14T18:57:49.1151488Z Adding all products to cart...
+2021-06-14T18:57:49.1152229Z Removing all products from cart...
+2021-06-14T18:57:49.1853361Z ##[section]Finishing: Run selenium

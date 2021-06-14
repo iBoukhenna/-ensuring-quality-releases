@@ -1,0 +1,18 @@
+2021-06-14T18:56:10.6630958Z ##[section]Starting: Deploy Azure Web App
+2021-06-14T18:56:10.6644933Z ==============================================================================
+2021-06-14T18:56:10.6645233Z Task         : Azure Web App
+2021-06-14T18:56:10.6645473Z Description  : Deploy an Azure Web App for Linux or Windows
+2021-06-14T18:56:10.6645706Z Version      : 1.187.0
+2021-06-14T18:56:10.6645906Z Author       : Microsoft Corporation
+2021-06-14T18:56:10.6646196Z Help         : https://aka.ms/azurewebapptroubleshooting
+2021-06-14T18:56:10.6646481Z ==============================================================================
+2021-06-14T18:56:11.1541396Z Got service connection details for Azure App Service:'ensuring-quality-releases-repo-appservice'
+2021-06-14T18:56:12.3121856Z Trying to update App Service Application settings. Data: {"WEBSITE_RUN_FROM_PACKAGE":"1"}
+2021-06-14T18:56:12.3123272Z Deleting App Service Application settings. Data: ["WEBSITE_RUN_FROM_ZIP"]
+2021-06-14T18:56:25.2883654Z Updated App Service Application settings and Kudu Application settings.
+2021-06-14T18:56:25.9397947Z Package deployment using ZIP Deploy initiated.
+2021-06-14T18:56:44.2501385Z Deploy logs can be viewed at https://ensuring-quality-releases-repo-appservice.scm.azurewebsites.net/api/deployments/0d954456aaac4e73942964061843338c/log
+2021-06-14T18:56:44.2502505Z Successfully deployed web package to App Service.
+2021-06-14T18:56:44.2503509Z NOTE: Run From Package makes wwwroot read-only, so you will receive an error when writing files to this directory.
+2021-06-14T18:56:46.0090510Z App Service Application URL: http://ensuring-quality-releases-repo-appservice.azurewebsites.net
+2021-06-14T18:56:46.0161778Z ##[section]Finishing: Deploy Azure Web App
